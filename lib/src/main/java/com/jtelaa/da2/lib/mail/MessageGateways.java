@@ -1,10 +1,10 @@
 package com.jtelaa.da2.lib.mail;
 
-import java.util.Locale;
+// import java.util.Locale;
 
-import com.google.i18n.phonenumbers.PhoneNumberToCarrierMapper;
-import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
+// import com.google.i18n.phonenumbers.PhoneNumberToCarrierMapper;
+// import com.google.i18n.phonenumbers.PhoneNumberUtil;
+// import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
 /**
  * ENUM containing the gateway address for SMS
@@ -120,37 +120,39 @@ public enum MessageGateways {
         return VERIZON;
     }
 
-    /**
-     * 
-     */
 
-    public static MessageGateways getCarrier(PhoneNumber number) {
-        PhoneNumberToCarrierMapper mapper = PhoneNumberToCarrierMapper.getInstance();
-        PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+    // /**
+    //  * 
+    //  */
 
-        if (phoneNumberUtil.isPossibleNumber(number)) {
-            MessageGateways carrier = MessageGateways.findCarrier(mapper.getNameForNumber(number, Locale.US));
+    // public static MessageGateways getCarrier(PhoneNumber number) {
+    //     PhoneNumberToCarrierMapper mapper = PhoneNumberToCarrierMapper.getInstance();
+    //     PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+
+    //     if (phoneNumberUtil.isPossibleNumber(number)) {
+    //         MessageGateways carrier = MessageGateways.findCarrier(mapper.getNameForNumber(number, Locale.US));
             
-            if (carrier.getMMSAddress() != null && carrier.getMMSAddress() != " " && carrier.getMMSAddress() != "") {
-                return carrier;
+    //         if (carrier.getMMSAddress() != null && carrier.getMMSAddress() != " " && carrier.getMMSAddress() != "") {
+    //             return carrier;
 
-            } 
-        } 
+    //         } 
+    //     } 
         
-        return VERIZON;
+    //     return VERIZON;
         
-    }
+    // }
 
-    /**
-     * 
-     */
+    // /**
+    //  * 
+    //  */
 
-    public static MessageGateways getCarrier(String number) {
-        PhoneNumber phonenumber = new PhoneNumber();
-        phonenumber.setCountryCode(1).setNationalNumber(Long.parseLong(number));
+    // public static MessageGateways getCarrier(String number) {
+    //     PhoneNumber phonenumber = new PhoneNumber();
+    //     phonenumber.setCountryCode(1).setNationalNumber(Long.parseLong(number));
         
-        return getCarrier(phonenumber);
+    //     return getCarrier(phonenumber);
         
-    }
+    // }
+
 
 }
