@@ -18,6 +18,19 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
+  <repositories>
+    <repository>
+        <id>lib</id>
+        <url>https://raw.githubusercontent.com/DA2Botnet/DA2-Libraries/main/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
