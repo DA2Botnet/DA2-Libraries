@@ -19,8 +19,6 @@ public class BotQueries extends DA2SQLQueries {
     private static volatile String table_name = "BOT";
     /** ID column name */
     private static volatile String id_type = "ID";
-    /** Franchise Column */
-    private static volatile String franchise_column = "FranchiseID";
 
     /** Log prefix */
     //private static volatile String sql_log_prefix = "BotSQL";
@@ -33,8 +31,8 @@ public class BotQueries extends DA2SQLQueries {
      * @throws EmptySQLURLException
      */
 
-    public synchronized static int getID(String ip, int franchise) throws EmptySQLURLException {
-        return DA2SQLQueries.getID(database, table_name, id_type, "LastIP", ip, franchise_column, franchise);
+    public synchronized static int getID(String ip) throws EmptySQLURLException {
+        return DA2SQLQueries.getID(database, table_name, id_type, "LastIP", ip);
 
     }
 
@@ -309,8 +307,6 @@ public class BotQueries extends DA2SQLQueries {
             "SET LastIP = " + new_ip + " " +
             "WHERE " + 
                 id_type + " = " + ID + " " +
-                "AND " +
-                franchise_column + " = " + franchise + 
             ";"
         );
     }
