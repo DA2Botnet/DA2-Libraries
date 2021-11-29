@@ -27,6 +27,34 @@ import com.jtelaa.da2.lib.log.Log;
 public class FileUtil {
 
     /**
+     * Loads all files within a directory
+     * 
+     * @param directory_path Path of the directory
+     * 
+     * @return List of all files
+     */
+
+    public synchronized static ArrayList<File> getFiles(String directory_path) {
+        ArrayList<File> files = new ArrayList<File>();
+        File directory = new File(directory_path);
+        
+        for (File entry : directory.listFiles()) {
+            if (entry.isDirectory()) {
+                for (File entry_rec : getFiles(entry.getPath())) {
+                    files.add(entry_rec);
+
+                }
+
+            } else {
+                files.add(entry);
+
+            }
+        }
+
+        return files;
+    }
+
+    /**
      * Reads a file within the classpath
      * 
      * @param path Path of the file
