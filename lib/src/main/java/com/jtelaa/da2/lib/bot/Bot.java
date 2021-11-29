@@ -32,8 +32,6 @@ public class Bot implements Serializable {
     public int hypervisor_id;
     /** Hypervisor VM ID */
     public int hypervisor_vm_id;
-    /** Franchise ID */
-    public int franchise_id;
     /** App verbosity */
     public boolean app_verbose;
     /** Log verbosity */
@@ -114,7 +112,6 @@ public class Bot implements Serializable {
         bot.id = PropertiesUtils.getKey(config, "id", -1);
         bot.ip = config.getProperty("ip");
         bot.hypervisor_id = PropertiesUtils.getKey(config, "hypervisor_id", -1);
-        bot.franchise_id = PropertiesUtils.getKey(config, "franchise");
         bot.log_verbose = PropertiesUtils.isTrue(config, "log_verbose", true);
         bot.app_verbose = PropertiesUtils.isTrue(config, "app_verbose", false);
         bot.local_cli = PropertiesUtils.isTrue(config, "local_cli", false);
@@ -150,7 +147,6 @@ public class Bot implements Serializable {
         exp_config.setProperty("id", id+"");
         exp_config.setProperty("ip", ip);
         exp_config.setProperty("hypervisor_id", hypervisor_id+"");
-        exp_config.setProperty("franchise", franchise_id+"");
         exp_config.setProperty("app_verbose", app_verbose+"");
         exp_config.setProperty("log_verbose", log_verbose+"");
         exp_config.setProperty("local_cli", local_cli+"");
@@ -171,23 +167,21 @@ public class Bot implements Serializable {
      * 
      * @param connectionURL Url to connect to
      * @param ip IP of the bot (used to determine id)
-     * @param franchise franchise number
      * 
      * @return Bot config
      * 
      * @throws EmptySQLURLException
      */
 
-    public static synchronized Bot loadfromDatabase(String connectionURL, String ip, int franchise) throws EmptySQLURLException {
+    public static synchronized Bot loadfromDatabase(String connectionURL, String ip) throws EmptySQLURLException {
         BotQueries.connectionURL = connectionURL;
         
         Bot bot = new Bot();
 
-        bot.id = BotQueries.getID(ip, franchise);
+        bot.id = BotQueries.getID(ip);
         bot.ip = BotQueries.getLastIP(bot.id);
         bot.hypervisor_id = BotQueries.getHypervisorID(bot.id);
         bot.hypervisor_vm_id = BotQueries.getHypVMID(bot.id);
-        bot.franchise_id = BotQueries.getFranchiseID(bot.id);
         bot.app_verbose = BotQueries.appVerbose(bot.id);
         bot.local_cli = BotQueries.localCLI(bot.id);
         bot.remote_cli = BotQueries.remoteCLI(bot.id);

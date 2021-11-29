@@ -135,6 +135,7 @@ public class BotQueries extends DA2SQLQueries {
      * @throws EmptySQLURLException
      */
 
+    @Deprecated
     public synchronized static int getFranchiseID(int ID) throws EmptySQLURLException {
         return Integer.parseInt(queryByID(ID, "FranchiseID"));
 
@@ -281,6 +282,7 @@ public class BotQueries extends DA2SQLQueries {
      * @param franchise Franchise to update
      */
 
+    @Deprecated
     public synchronized static void setFranchise(int ID, int franchise) {
         SQL.query(connectionURL, 
             "USE " + database + "; " +
