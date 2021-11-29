@@ -298,11 +298,10 @@ public class BotQueries extends DA2SQLQueries {
      * Updates the ip address of the bot
      * 
      * @param ID ID of the bot
-     * @param franchise Franchise number of the hot
      * @param new_ip New ip address
      */
 
-    public synchronized static void updateIP(int ID, int franchise, String new_ip) {
+    public synchronized static void updateIP(int ID, String new_ip) {
         SQL.query(connectionURL,
             "USE " + database + "; " +
             "UPDATE " + table_name + " " +
