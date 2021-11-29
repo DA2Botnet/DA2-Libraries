@@ -8,6 +8,7 @@
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/config/ConfigHandler.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/bot/plugin/Plugins.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/sql/SQL.java
+/Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/franchise/FranchiseUtils.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/net/server/ServerUDP.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/net/ports/ManualPort.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/net/StateCodes.java
