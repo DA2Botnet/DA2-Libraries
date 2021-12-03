@@ -1,6 +1,8 @@
 package com.jtelaa.da2.lib.console;
 
+import com.jtelaa.da2.lib.control.ComputerControl;
 import com.jtelaa.da2.lib.files.FileUtil;
+import com.jtelaa.da2.lib.log.Log;
 
 /**
  * Prints out the banners into the console
@@ -19,7 +21,7 @@ public class ConsoleBanners {
     public static volatile int EXTERNAL = 1;
 
     /** Internal banner path */
-    private static final String BANNER_PATH = "rsc/banners/";
+    private static final String BANNER_PATH = "~/banners/";
 
     /**
      * Test prints banners
@@ -27,6 +29,22 @@ public class ConsoleBanners {
     public static void main(String[] args) {
         System.out.println(mainBanner(ConsoleColors.YELLOW_BOLD_BRIGHT));
         System.out.println(directorBanner(ConsoleColors.GREEN_BOLD_BRIGHT));
+
+    }
+
+    /**
+     * Loads remote banners from the git repo
+     * 
+     * @param program_name Name of the program to get its specific banner
+     */
+
+    public static void loadRemoteBanners(String program_name) {
+        // Get banners
+        Log.sendManSysMessage("Loading banners");
+        ComputerControl.sendCommand("mkdir ~/banners/");
+        ComputerControl.sendCommand("cd ~/banners/ && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/MainBanner.txt > MainBanner.txt");
+        ComputerControl.sendCommand("cd ~/banners/ && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/QueryGen.txt > " + program_name + ".txt");
+
     }
 
     /**
