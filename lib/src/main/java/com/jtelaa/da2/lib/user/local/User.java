@@ -2,10 +2,10 @@ package com.jtelaa.da2.lib.user.local;
 
 import java.io.Serializable;
 
-import com.jtelaa.da2.lib.log.Log;
+// import com.jtelaa.da2.lib.log.Log;
 import com.jtelaa.da2.lib.mail.MessageGateways;
-import com.jtelaak.da2.deprecatedlib.crypto.EncryptionUtils;
-import com.jtelaak.da2.deprecatedlib.crypto.SystemCrypto;
+// import com.jtelaak.da2.deprecatedlib.crypto.EncryptionUtils;
+// import com.jtelaak.da2.deprecatedlib.crypto.SystemCrypto;
 
 /**
  * Local user object to login to cli
@@ -78,15 +78,19 @@ public class User implements Serializable {
             this.password = password;
 
         } else {
-            try {
-                // Encrypt
-                this.password = EncryptionUtils.encrypt(SystemCrypto.algorithm, password, SystemCrypto.key, SystemCrypto.iv);
+            // try {
+            //     // Encrypt
+            //     this.password = EncryptionUtils.encrypt(SystemCrypto.algorithm, password, SystemCrypto.key, SystemCrypto.iv);
             
-            } catch (Exception e) {
-                // Send error
-                Log.sendMessage(e.getMessage());
+            // } catch (Exception e) {
+            //     // Send error
+            //     Log.sendMessage(e.getMessage());
 
-            }
+            // }
+
+            // If already encrypted TODO get ecncryption back
+            this.password = password;
+
         }
     }
 
