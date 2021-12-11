@@ -1,6 +1,5 @@
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/control/QueuedResponseReceiver.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/sql/EmptySQLURLException.java
-/Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/user/ldap/LDAP.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/config/PropertiesUtils.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/log/LocalLogConnector.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/control/QueuedResponseSender.java
@@ -26,10 +25,8 @@
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/bot/plugin/Plugin.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/mail/Mail.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/net/ports/SysPorts.java
-/Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/crypto/EncryptionUtils.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/user/local/UserHandler.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/control/ComputerControl.java
-/Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/crypto/SystemCrypto.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/console/ConsoleColors.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/net/OneTimeConnection.java
 /Users/Joseph/Desktop/GitHub/DA2-Libraries/lib/src/main/java/com/jtelaa/da2/lib/control/QueuedCommandSender.java

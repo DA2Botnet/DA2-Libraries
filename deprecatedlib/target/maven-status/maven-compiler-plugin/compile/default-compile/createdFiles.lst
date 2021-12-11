@@ -1,0 +1,3 @@
+com/jtelaak/da2/deprecatedlib/user/ldap/LDAP.class
+com/jtelaak/da2/deprecatedlib/crypto/SystemCrypto.class
+com/jtelaak/da2/deprecatedlib/crypto/EncryptionUtils.class
