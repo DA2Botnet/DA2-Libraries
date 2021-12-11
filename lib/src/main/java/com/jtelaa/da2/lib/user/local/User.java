@@ -2,10 +2,10 @@ package com.jtelaa.da2.lib.user.local;
 
 import java.io.Serializable;
 
-import com.jtelaa.da2.lib.crypto.EncryptionUtils;
-import com.jtelaa.da2.lib.crypto.SystemCrypto;
 import com.jtelaa.da2.lib.log.Log;
 import com.jtelaa.da2.lib.mail.MessageGateways;
+import com.jtelaak.da2.deprecatedlib.crypto.EncryptionUtils;
+import com.jtelaak.da2.deprecatedlib.crypto.SystemCrypto;
 
 /**
  * Local user object to login to cli

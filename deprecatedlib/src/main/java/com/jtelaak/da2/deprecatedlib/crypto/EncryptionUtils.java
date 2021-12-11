@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.crypto;
+package com.jtelaak.da2.deprecatedlib.crypto;
 
 import java.io.File;
 import java.io.FileInputStream;

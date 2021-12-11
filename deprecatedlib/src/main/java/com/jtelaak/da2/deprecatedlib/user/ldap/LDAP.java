@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.user.ldap;
+package com.jtelaak.da2.deprecatedlib.user.ldap;
 
 import java.util.Hashtable;
 

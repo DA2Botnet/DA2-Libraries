@@ -13,7 +13,7 @@ import com.jtelaa.da2.lib.net.NetTools;
 import com.jtelaa.da2.lib.net.ports.Ports;
 
 import org.apache.commons.lang3.SerializationUtils;
-import org.junit.Test;
+//import org.junit.Test;
 
 /**
  * Network client for sending UDP messages
@@ -261,23 +261,23 @@ public class ClientUDP {
     }
 
     
-    /**
-     * Test by sending packets
-     */
+    // /**
+    //  * Test by sending packets
+    //  */
 
-    @Test
-    public static void test() {
-        ClientUDP client = new ClientUDP("127.0.0.1", 9999);
-        int i = 0;
+    // @Test
+    // public static void test() {
+    //     ClientUDP client = new ClientUDP("127.0.0.1", 9999);
+    //     int i = 0;
 
-        client.startClient();
+    //     client.startClient();
         
-        while (true) {
-            client.sendMessage("Test " + i);
-            i++;
-        }
+    //     while (true) {
+    //         client.sendMessage("Test " + i);
+    //         i++;
+    //     }
         
-    }
+    // }
 
     /** @return port used by client */
     public int getPort() { return port; }

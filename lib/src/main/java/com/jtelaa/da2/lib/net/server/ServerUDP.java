@@ -10,7 +10,7 @@ import com.jtelaa.da2.lib.log.Log;
 import com.jtelaa.da2.lib.net.ports.Ports;
 
 import org.apache.commons.lang3.SerializationUtils;
-import org.junit.Test;
+// import org.junit.Test;
 
 
 /**
@@ -305,23 +305,23 @@ public class ServerUDP {
         }
     }
 
-    /**
-     * Test by receiving packets and printing them
-     */
+    // /**
+    //  * Test by receiving packets and printing them
+    //  */
 
-    @Test
-    public static void test() {
-        ServerUDP server = new ServerUDP(9999);
-        String message = "";
+    // @Test
+    // public static void test() {
+    //     ServerUDP server = new ServerUDP(9999);
+    //     String message = "";
 
-        server.startServer();
+    //     server.startServer();
 
-        while (true) {
-            if (message != null) {
-                System.out.println(server.getMessage());
-            }
-        }
-    }
+    //     while (true) {
+    //         if (message != null) {
+    //             System.out.println(server.getMessage());
+    //         }
+    //     }
+    // }
 
     /** @return port opened by server */
     public int getPort() { return port; }
