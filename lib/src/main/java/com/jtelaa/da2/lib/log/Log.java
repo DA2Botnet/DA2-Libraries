@@ -174,8 +174,21 @@ public class Log {
      */
 
     public synchronized static void sendMessage(String message, ConsoleColors color) {
-        if (app_verbose) { sendManSysMessage(message, color); }   // System message
-        if (log_verbose) { sendManLogMessage(message, color); }   // Logging message
+        sendMessage(color + message + ConsoleColors.CLEAR);
+
+    }
+
+    /**
+     * Sends exception's message to the log and system console <p>
+     * This checks the verbosity of both
+     * 
+     * @param log_prefix String to add to begining of exception message
+     * @param e Exception to send
+     * @param color Color to use
+     */
+
+    public synchronized static void sendMessage(String log_prefix, String message, ConsoleColors color) {
+        sendMessage(log_prefix + ":" + color + message + ConsoleColors.CLEAR);
 
     }
 
@@ -188,11 +201,11 @@ public class Log {
      */
 
     public synchronized static void sendMessage(String log_prefix, Exception e) {
-        sendMessage(log_prefix + ":\n" + e.getMessage());
+        sendMessage(log_prefix + ": " + e.getMessage());
 
     }
 
-     /**
+    /**
      * Sends exception's message to the log and system console <p>
      * This checks the verbosity of both
      * 
@@ -202,7 +215,7 @@ public class Log {
      */
 
     public synchronized static void sendMessage(String log_prefix, Exception e, ConsoleColors color) {
-        sendMessage(log_prefix + ":\n" + e.getMessage(), color);
+        sendMessage(log_prefix + ":" + color + e.getMessage() + ConsoleColors.CLEAR);
 
     }
 
