@@ -1,5 +1,8 @@
 package com.jtelaa.da2.lib.console;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import com.jtelaa.da2.lib.control.ComputerControl;
 import com.jtelaa.da2.lib.files.FileUtil;
 import com.jtelaa.da2.lib.log.Log;
@@ -21,7 +24,7 @@ public class ConsoleBanners {
     public static volatile int EXTERNAL = 1;
 
     /** Internal banner path */
-    private static final String BANNER_PATH = "~/banners/";
+    private static String BANNER_PATH = "~/banners/";
 
     /**
      * Test prints banners
@@ -33,17 +36,36 @@ public class ConsoleBanners {
     }
 
     /**
-     * Loads remote banners from the git repo
+     * Loads remote banners from the git repo and requires the ~/banners/ directory to exists
      * 
      * @param program_name Name of the program to get its specific banner
      */
 
     public static void loadRemoteBanners(String program_name) {
+        // If directory exists, create it
+        if (Files.isDirectory(Paths.get(BANNER_PATH))) {
+            Log.sendLogMessage("Banner directory not found. Creating....", ConsoleColors.YELLOW);
+            ComputerControl.sendCommand("mkdir " + BANNER_PATH);
+            
+        }
+
         // Get banners
         Log.sendManSysMessage("Loading banners");
-        ComputerControl.sendCommand("mkdir ~/banners/");
-        ComputerControl.sendCommand("cd ~/banners/ && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/MainBanner.txt > MainBanner.txt");
-        ComputerControl.sendCommand("cd ~/banners/ && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/QueryGen.txt > " + program_name + ".txt");
+        ComputerControl.sendCommand("cd " + BANNER_PATH + " && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/MainBanner.txt > MainBanner.txt");
+        ComputerControl.sendCommand("cd " + BANNER_PATH + " && curl https://raw.githubusercontent.com/DA2Botnet/DA2Botnet.github.io/main/banners/QueryGen.txt > " + program_name + ".txt");
+
+    }
+
+    /**
+     * Loads remote banners from the git repo 
+     * 
+     * @param program_name Name of the program to get its specific banner
+     * @param banner_path Path of the banners
+     */
+
+    public static void loadRemoteBanners(String program_name, String banner_path) {
+        BANNER_PATH = banner_path;
+        loadRemoteBanners(program_name);
 
     }
 
