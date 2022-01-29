@@ -1,10 +1,9 @@
-package com.jtelaa.da2.lib.misc;
+package com.da2.lib.genutil;
 
 import java.util.Random;
 
-import com.jtelaa.da2.lib.log.Log;
+import com.da2.lib.log.Log;
 
-// TODO comment
 
 public class MiscUtil {
 
