@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.files;
+package com.da2.lib.files;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 
-import com.jtelaa.da2.lib.log.Log;
+import com.da2.lib.log.Log;
 
 /**
  * Utilities class for handling files

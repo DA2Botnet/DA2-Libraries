@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.files;
+package com.da2.lib.files;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
