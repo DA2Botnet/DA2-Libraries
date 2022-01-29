@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.net.server;
+package com.da2.lib.net.server;
 
 import java.io.DataInputStream;
 import java.io.InputStream;
@@ -7,7 +7,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.jtelaa.da2.lib.log.Log;
+import com.da2.lib.log.Log;
+
 
 /**
  * Server client for recieving messages

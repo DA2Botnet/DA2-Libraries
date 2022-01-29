@@ -1,13 +1,13 @@
-package com.jtelaa.da2.lib.net.server;
+package com.da2.lib.net.server;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-import com.jtelaa.da2.lib.console.ConsoleColors;
-import com.jtelaa.da2.lib.log.Log;
-import com.jtelaa.da2.lib.net.ports.Ports;
+import com.da2.lib.colors.ConsoleColors;
+import com.da2.lib.log.Log;
+import com.da2.lib.net.ports.Ports;
 
 import org.apache.commons.lang3.SerializationUtils;
 // import org.junit.Test;

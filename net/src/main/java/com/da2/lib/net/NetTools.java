@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.net;
+package com.da2.lib.net;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,9 +8,8 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.URL;
 
-import com.jtelaa.da2.lib.console.ConsoleColors;
-import com.jtelaa.da2.lib.control.ComputerControl;
-import com.jtelaa.da2.lib.log.Log;
+import com.da2.lib.colors.ConsoleColors;
+import com.da2.lib.log.Log;
 
 import org.apache.commons.validator.routines.InetAddressValidator;
 
@@ -134,31 +133,33 @@ public class NetTools {
         }
     }
 
-    /**
-     * Set a new default gateway
-     * 
-     * @param default_gateway New default gateway
-     */
+    // TODO Uncomment after buidling lib
 
-    public static void setDefaultGateway(String default_gateway) { 
-        // If linux
-        if (ComputerControl.getOS().equalsIgnoreCase("linux")) {
-            // Clear default gateway
-            ComputerControl.sendCommand("sudo route delete default gw 10.0.2.2 eth0");
+    // /**
+    //  * Set a new default gateway
+    //  * 
+    //  * @param default_gateway New default gateway
+    //  */
 
-            // Set new defult gateway
-            ComputerControl.sendCommand("sudo route delete default gw " + default_gateway + " eth0");
+    // public static void setDefaultGateway(String default_gateway) { 
+    //     // If linux
+    //     if (ComputerControl.getOS().equalsIgnoreCase("linux")) {
+    //         // Clear default gateway
+    //         ComputerControl.sendCommand("sudo route delete default gw 10.0.2.2 eth0");
 
-        } else if (ComputerControl.getOS().equalsIgnoreCase("windows")) {
-            // Get internal ip & info
-            String internal_ip = getLocalIP();
-            String net_mask = getSubnet();
+    //         // Set new defult gateway
+    //         ComputerControl.sendCommand("sudo route delete default gw " + default_gateway + " eth0");
 
-            // Set static ip w/ new gateway
-            ComputerControl.sendCommand("netsh int ip set address \"local area connection\" static " + internal_ip + " " + net_mask + " " + default_gateway);
+    //     } else if (ComputerControl.getOS().equalsIgnoreCase("windows")) {
+    //         // Get internal ip & info
+    //         String internal_ip = getLocalIP();
+    //         String net_mask = getSubnet();
 
-        }
-    }
+    //         // Set static ip w/ new gateway
+    //         ComputerControl.sendCommand("netsh int ip set address \"local area connection\" static " + internal_ip + " " + net_mask + " " + default_gateway);
+
+    //     }
+    // }
 
     /**
      * Checks if address is valid (Assumes valid if exception thrown)
