@@ -1,13 +1,10 @@
-package com.jtelaa.da2.lib.log;
+package com.da2.lib.log;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Properties;
 import java.util.Queue;
 
-import com.jtelaa.da2.lib.console.ConsoleColors;
-import com.jtelaa.da2.lib.net.ports.Ports;
-import com.jtelaa.da2.lib.net.ports.SysPorts;
+import com.da2.lib.colors.ConsoleColors;
 
 /**
  * Logging capability
@@ -32,9 +29,6 @@ public class Log {
 
     /** Log Sender Process */
     private volatile static LogSender sender;
-
-    /** Local log connection */
-    private volatile static LocalLogConnector connector;
 
     /**
      * Load the config from the configuration file <p>
@@ -94,51 +88,40 @@ public class Log {
 
     }
 
-    /**
-     * Opens the logging connector so admine can interface with the application if it running in the background
-     */
+    // /**
+    //  * Opens the logging client to send messages to servers
+    //  * 
+    //  * @param logging_port IP of server
+    //  */
 
-    public synchronized static void openConnector() {
-        // Start the connector
-        connector = new LocalLogConnector();
-        connector.start();
+    // public synchronized static void openClient(String logging_server_ip) {
+    //     openClient(logging_server_ip, SysPorts.LOG);
 
-    }
+    // }
 
-    /**
-     * Opens the logging client to send messages to servers
-     * 
-     * @param logging_port IP of server
-     */
+    // /**
+    //  * Opens the logging client to send messages to servers
+    //  * 
+    //  * @param logging_server_ip IP of server
+    //  * @param logging_port Port to use
+    //  */
 
-    public synchronized static void openClient(String logging_server_ip) {
-        openClient(logging_server_ip, SysPorts.LOG);
+    // public synchronized static void openClient(String logging_server_ip, Ports logging_port) {
+    //     // Stop if log is not verbose
+    //     if (!log_verbose) { 
+    //         sendSysMessage("Local Logging Only");
+    //         return; 
 
-    }
+    //     } 
 
-    /**
-     * Opens the logging client to send messages to servers
-     * 
-     * @param logging_server_ip IP of server
-     * @param logging_port Port to use
-     */
-
-    public synchronized static void openClient(String logging_server_ip, Ports logging_port) {
-        // Stop if log is not verbose
-        if (!log_verbose) { 
-            sendSysMessage("Local Logging Only");
-            return; 
-
-        } 
-
-        // Create the queue
-        logging_queue = new LinkedList<String>();
+    //     // Create the queue
+    //     logging_queue = new LinkedList<String>();
         
-        // Start the log sender
-        sender = new LogSender(logging_server_ip, logging_port);
-        sender.start();
+    //     // Start the log sender
+    //     sender = new LogSender(logging_server_ip, logging_port);
+    //     sender.start();
 
-    }
+    // }
 
     /**
      * Adds a log message to the history (Max lines: 5000)
@@ -414,25 +397,25 @@ public class Log {
 
     }
 
-    /** Closes the logging client */
+    // /** Closes the logging client */
 
-    public synchronized static void closeLog() {
-        try {
-            if (sender.log_established) { 
-                sender.stopSender();
+    // public synchronized static void closeLog() {
+    //     try {
+    //         if (sender.log_established) { 
+    //             sender.stopSender();
 
-            }
+    //         }
 
-            if (connector.log_established) {
-                connector.stopServer();
+    //         if (connector.log_established) {
+    //             connector.stopServer();
                 
-            }
+    //         }
 
-        } catch (NullPointerException e) {
-            return;
+    //     } catch (NullPointerException e) {
+    //         return;
 
-        }
+    //     }
         
-    }
+    // }
 
 } 
