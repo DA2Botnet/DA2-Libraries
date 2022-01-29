@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.net.client;
+package com.da2.lib.net.client;
 
 import java.io.DataOutputStream;
 import java.io.ObjectOutputStream;
@@ -8,8 +8,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import com.jtelaa.da2.lib.log.Log;
-import com.jtelaa.da2.lib.net.NetTools;
+import com.da2.lib.log.Log;
+import com.da2.lib.net.NetTools;
 
 /**
  * Network client for sending messages

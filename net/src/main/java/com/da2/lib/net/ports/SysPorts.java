@@ -1,4 +1,4 @@
-package com.jtelaa.da2.lib.net.ports;
+package com.da2.lib.net.ports;
 
 /**
  * Enumeration type for basic system ports
